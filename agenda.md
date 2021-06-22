@@ -2,7 +2,7 @@
 
 [![hackmd-github-sync-badge](https://hackmd.io/6hUuZIjGQpeLVAqcxdakZA/badge)](https://hackmd.io/6hUuZIjGQpeLVAqcxdakZA)
 
-[**WG projects** ] | [ DIF page ] | [Mailing list and Wiki ](wallet-security@lists.identity.foundation)
+[**WG projects**](https://github.com/topics/wg-ws) | [ DIF page] | [Mailing list](wallet-security@lists.identity.foundation)
 
 _For this call, you are encouraged to turn your video on. This is a good way to build rapport given we are a large, disparate group experiencing a lot of churn._
 
