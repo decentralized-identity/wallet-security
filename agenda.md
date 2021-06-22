@@ -10,7 +10,7 @@ _This document is live-edited DURING each call, or shortly after the call, and s
 Please note that we might not notice a pullrequest in time, but you are free to propose agenda items for future meetings via hackmd._
 
 <details>
-<summary> Meeting information - <b>Mondays 1400 ET</b></summary>
+<summary> Meeting information - <b>Mondays 1300 ET</b></summary>
 
 - Before your contribute - [**join DIF**](https://identity.foundation/join) and [sign the WG charter](https://bit.ly/DIF-WG-select1) (both are required!)
 - Time: Every Tuesday, 13:00-14:00 ET
@@ -21,7 +21,7 @@ Password: 661333
 
 
 
-## Meeting - 08 June 2021 - (1300 ET)
+## Meeting - 22 June 2021 - (1300 ET)
 
 ### Agenda
 
@@ -29,5 +29,26 @@ Password: 661333
 
 
 ### Attendees
+
+- Paul
+- Bernard
+- Kristina
+- Oliver
+- Keith
+- Michael
+- Balasz
+- Sebastian Bickerle
+
+### notes
+
+ - Sebastian from Lissi team new on the call
+ - Agenda more up-to-note form next week
+ - TSC approved the charter
+     - join the wg by signing the charter
+     - https://bit.ly/DIF-WG-select1 
+ - where to put meeting notes?
+ - having a first look at prior art
+     - https://docs.google.com/spreadsheets/d/1ZvQm6zlGqrRmvSG2siAXnV824sHhVyH0qRDjmunr4p8/edit#gid=0
+
 
 
