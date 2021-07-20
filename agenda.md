@@ -2,7 +2,7 @@
 
 [![hackmd-github-sync-badge](https://hackmd.io/6hUuZIjGQpeLVAqcxdakZA/badge)](https://hackmd.io/6hUuZIjGQpeLVAqcxdakZA)
 
-[**WG projects**](https://github.com/topics/wg-ws) | [ DIF page](https://identity.foundation/working-groups/wallet-security.html) | [Mailing list](wallet-security@lists.identity.foundation)
+{ [**WG projects**](https://github.com/topics/wg-ws) | [ DIF page](https://identity.foundation/working-groups/wallet-security.html) | [Mailing list](wallet-security@lists.identity.foundation) | [Meeting Recordings](https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=194851117) }
 
 _For this call, you are encouraged to turn your video on. This is a good way to build rapport given we are a large, disparate group experiencing a lot of churn._
 
@@ -18,6 +18,83 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 - [Zoom room](https://us02web.zoom.us/j/85747197140?pwd=RmJBcXd6blJidS9rZm9Fd2puclFhdz09), Meeting ID: 85747197140,
 Password: 661333
 </details>
+
+## Meeting - 20 July 2021 - (1300 ET)
+
+### Agenda
+
+- working group meeting time slot status
+- working group charter signing status
+- review vacation summer status
+- review current organization status of the WG
+- presenting the working group document and continue work on security archtiectures/capabilities
+- split prior art review as homework?
+
+### Attendees
+
+- Paul Bastian
+- Bernard Joly
+
+
+### notes
+- poll for diffrent time slot:
+- new sections for the document:
+    - terminology/vocubalary
+    - common security architecture
+    - communication overview
+    - capabilities overview
+    - capabilities criteria
+    - attestation
+    - regulatory frameworks fit
+
+
+## Meeting - 6 July 2021 - (1300 ET)
+
+### Agenda
+
+- suggestion to move one hour earlier - 6pm CET
+- gathering feedback/desire from wallet providers
+- discussing and working on definition of security architectures
+
+### Attendees
+
+- Paul Bastian
+- Bernard Joly
+- Dirk Thatmann
+- Kai Wagner
+- Ian Bailey
+- Rogelio Morrell
+- Sebastien Bickerle
+- Keith Kowal
+
+### notes
+
+- Sebastian Bickerle(Lissi): native apps developer: what measures can we do to participate in diffrent/regulated usecases, keeping UX as easy as possible, access to hardware is difficult, secureing indy sql-database, only starting yet
+- Kai(Jolocom): similar, working with aries 2.0, starting on SSI-specific applet, figuring out how to use them, difficult crypto-alignment, german&euro market, regulated market, aligning with international standards
+- Rogelio: documents & crypto wallets, consumer wallet, how to secure/store VCs etc, database with encrypotoion layer on top for now, no standardized wallet security, moved to web wallet, wallet-connect
+- Keith: mobile wallet, arch changed to web wallet, diffrent key management, customer-driven, key management shifted from secure enclave/TEE, lost-password support issues, this lead to focus on recovery
+- security architecture:
+    - differentiation between user-managed/native-generated keys(software vs hardware) vs platform managing/cloud(similar to password management)
+    - hot-wallet vs cold-wallet
+    - edge vs cloud
+
+- Keith: requirements to move to platform-based
+    - browser can't store the keys securly
+    - recovery
+    - instability in w3c vc model, easier reissuance
+- cloud wallets are hard to link to mobile secure storage, also changing the phone is difficult
+- security architecture #1
+    - cloud-wallet/platform-managed
+    - keys are stored/lifecycle by the platform
+    - authentication is towards the platform (e.g. username/password)
+    - specific features: strong recovery, web&mobile possible, yubikeys
+- security architecture #2
+    - mobile/native
+    - keys are generated the edge(software or hardware)
+    - keys are stored/lifecycle on filesystem/secure enclave
+    - authentication is PIN/mobile OS provided mechanism
+    - specific features: device binding, automated backup to cloud possible
+- mix of VC with diffrent security architectzure in one wallet?
 
 
 ## Meeting - 28 June 2021 - (1300 ET)
@@ -55,7 +132,7 @@ Michael 3 pillars:
 
 authentication of the wallet
  - user (PIN)
- - proof of possession(yubikey, smartcard)
+ - proof of possession(secure key, smartcard)
  - biometric (for mobile app)
      - mainly talking about 1:1(authetnication) rather than 1:N(identification)
      - mobile OS mechanisms
