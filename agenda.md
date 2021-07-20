@@ -25,8 +25,8 @@ Password: 661333
 
 - working group meeting time slot status
 - working group charter signing status
-- review vacation summer status
 - review current organization status of the WG
+- review vacation summer status
 - presenting the working group document and continue work on security archtiectures/capabilities
 - split prior art review as homework?
 
@@ -34,18 +34,30 @@ Password: 661333
 
 - Paul Bastian
 - Bernard Joly
-
+- Kristina 
+- Martin Ingram
+- Ian Bailey
+- Keith
+- Rogelio
 
 ### notes
-- poll for diffrent time slot:
-- new sections for the document:
-    - terminology/vocubalary
-    - common security architecture
-    - communication overview
-    - capabilities overview
-    - capabilities criteria
-    - attestation
-    - regulatory frameworks fit
+- working group meeting time discussion
+  - Bernard provide poll/thoughts about biweekly or topic-specific workshops
+- summer break for next three weeks
+    - starting back on 17. August
+- current organization situation
+    - no work items/owners of these
+    - more workshop oriented/longer sessions on specific topic
+- starting work on spec-like group document:
+    - https://docs.google.com/document/d/1c8v7Jg0ZthvoRESeVZayTPE5xt5P_MAKIA9nz2qrCDo/edit#
+    - new sections/discussion for the document:
+        - terminology/vocubalary
+        - common security architecture
+        - capabilities criteria
+        - capabilities groups/levels
+        - attestation
+        - communication overview
+- discussion about how to continue
 
 
 ## Meeting - 6 July 2021 - (1300 ET)
