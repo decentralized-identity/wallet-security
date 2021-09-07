@@ -19,6 +19,55 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 7 September 2021 - (1300 ET)
+
+### Agenda
+
+- continue discussion and work on terms, security architecture, communication
+- drafting an example workflow with credential lifecycle and the describe the wallet security aspects
+- discussion on a questionnaire
+- feel free to address any new topics
+
+### Attendees
+
+- Paul
+- Ian
+- Keith
+- Dirk Thatmann
+
+### notes
+
+- we continue back to regular weekly meeting from here on
+- discussion on individual capabilites vs groups/level of assurances
+    - individual capabilities seem to detailed to list them/negotiate them specifically
+    - rather list or link to existing standards, avoid duplication of requirements
+    - group capabilites properties together
+- Keith supports the discussion with presentation:
+    - https://docs.google.com/presentation/d/1tk1AlUMthjIzIJJmF-ZSNZ7J3DmM1fxQztLukF5AoZQ
+- Examples for diffrent Wallet Security Levels:
+    - Level 1: German government issues Digital Passport to recipient
+    - Level 2: AWS issues “Solution Architect” certification to recipient
+    - Level 3: Home Depot issues free membership card to recipient
+- Examining typical capabilites for given security levels, roughly:
+    - Level 1: HW like TEE, credentials bound to device, strong user authentication, no revocery
+    - Level 2: Keys are allowed in remote backup allowed with storng user encryption,  recovery allowed with complex knowledge/biometrics
+    - Level 3: Keys are allowed in remote backup with platform encryption, simple user authenticaiton like username/password, platform manages credentials
+- most secure relevant aspect like signature schemes, DID methods, protocols are given and already decided by the issuer
+- wallet usually doesn't have too much possiblities(take it or leave it)
+- verifier usually doesn't have too much choices either, maybe user authentication sometimes?
+- most high security relevant questions (especially in regulated use cases) are handled upfront in the design/certification phase, therefore certification/assertion of the wallet will be highly relevant
+- Main points/questions:
+    -  do we apply to existing LoAs directly or define intermediate levels for groups of capabilities described here and match existing LoAs to these
+    -  Does a wallet support L1,L2 and L3 ? Can we have L1 and L3 credentials at the same time?
+    -  Wallets could fulfill LoA on a global/device base or on a per-credential base decided by the issuer
+    -  Distinguish Wallet Security LoA and IT System Security LoA, attention that we don’t mix in data input quality LoA
+
+
+
+
+
+
+
 ## Meeting - 20 July 2021 - (1300 ET)
 
 ### Agenda
