@@ -19,6 +19,183 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 2 November 2021 - (6 PM CET)
+
+### Agenda
+
+1. wg organization from DIF
+2. Trusted verifiers - updates and sequence diagrams
+3. Discussing wallets supporting multiple security levels for the issuer to chose
+
+### Attendees
+- Paul Bastian
+- Bernard Joly
+- Chris Kelly
+- Kristina Yasuda
+- Balazs Nemethi
+- Ian Bailey
+- Sebastian Bickerle
+- Pieter Kasselman
+- Keith Kowal
+- Kai Wagner
+
+### Notes
+
+#### WG organization
+
+- Wallet security document is now available in gitub. https://github.com/decentralized-identity/wallet-security/blob/main/wallet-security-criteria.md
+- Get more regulators on board
+- Get more wallet implementers on board
+- Get more active participation
+- increase visibility of the group
+- **quickly understable core vision of the group**
+- document needs more written text, self-readable/understandable
+- ask Oliver to step down
+
+#### vision of the group
+
+- vision of the group similar enough for the summary document?
+- scope too broad? narrow scope for first iteration?
+    - example: tusted verifier off/on scope - people undecided
+- what to focus on? seperate work items?
+- goal?
+    - vote on new work items - undecided
+    - what are the motivations for issuers and verifiers?
+        - understand requirements from the industry
+    - discussion between levels and existing LoAs, e.g. ISO -> drifting to content discussion
+    - group is undecided wether new work items will be beneficial
+
+#### Trusted Verifier
+time was over
+
+## Meeting - 26 October 2021 - (6 PM CET)
+
+### Agenda
+
+1. IIW#33 review - relevant sessions
+2. wg organization - attendance , cochairs, contributions, country-specific views
+3. Trusted verifiers - authenticating and communicating security levels of verifier identities to the user in the wallet(UI&UX)
+4. Discussing wallets supporting multiple security levels for the issuer to chose - gaining the best of all worlds
+
+### Attendees
+- Paul Bastian
+- Bernard Joly
+- Ian Bailey
+- Dirk Thatmann
+- Kai Wagner
+- Tom Jones
+- Thierry Thevenet
+- Keith Kowal
+
+### Notes
+
+#### IIW recap - relevant sessions:
+ - 3A - Need for hardware backed crypto on the web!
+ - 11J - The future of Governance
+ - 14B - UX: continuing the mid-2021 IIW UX conversation
+
+#### WG organisation
+ - shift to bi-weekly (voted pro)
+ - other tooling (voted contra - not for now)
+ - still lacking input of contributors
+     - maybe its only the start?
+     - difficult topic / SSI open-ness does not matchcurrent world?
+     - target more wallet implementers?
+     - another round of advertisement @DIF
+ - adress also visions instead of products/projects
+ - stack-indepedence?
+ - more concise summary on what to achieve (not the charter)?
+ - focus on specific problems to solve, e.g. german gov project?
+
+#### Trusted verifiers (and also issuers?)
+ - proposing different levels
+     - how many make sense?
+ - level 0: non-authenticated
+     - minimum requirements (above bare minimum)
+     - disallow HTTP
+     - **display warning for untrusted connections**/requests (phishing)
+     - display service-endpoint URL
+     - do not display self-attested names? (e.g. Aries RFC0160 label)
+ - level 1: authenticated
+     - reusing HTTPS certificate attributes of service endpoints
+     - show company name from [EV](https://en.wikipedia.org/wiki/Extended_Validation_Certificate) and [QWAC](https://en.wikipedia.org/wiki/Qualified_website_authentication_certificate) certificates
+     - Public DIDs from a ledger?
+     - DIDs shall be linked to service endpoints using well-known DID configuration, did:web, did:dns...
+ - level 2: trusted
+     - like Twitter checkmark
+     - trust registries?
+     - advanced trust from a trust service provider
+         - as VC or inside the DID document?
+ - UX challenge on how to communicate more than 2 levels
+ - 2way authentication
+     - this is usually handled by the proof request itself
+     - awareness for MITM, but this is probably a separate topic
+ - issues:
+     - handle did-method specific stuff
+     - handle network/ledger specific stuff
+     - handle non-HTTPS protocols
+
+#### Discussion on multiple security levels supported by the wallet
+time was over 
+
+## Meeting - 12 October 2021 - cancelled
+due to IIW
+
+## Meeting - 05 October 2021 - (6 PM CET)
+
+### Agenda
+
+1. Matching individual security capabilities values to the 3 proposed wallet security levels(L1,L2,L3)
+2. Discussing wallets supporting multiple security levels for the issuer to chose - gaining the best of all worlds
+3. Trusted verifiers - authenticating and communicating security levels of verifier identities to the user in the wallet(UI&UX)
+
+### Attendees
+- Ian Bailey
+- Michael Lodder
+- Kai Wagner
+- Thierry Thevenet
+- Bernard joly 
+- Kristina Yasuda
+- Tomj
+- Keith Kowal
+
+### notes
+Trusted Verifiers. In germany launched the drivers licence in the new wallet. There are 300k download. There are some issues regarding the UX wallet . Trusted the verifier is an isssue. There are  different levels for the "verify". The verifiers need to improve the authentication ( not done today). Thi point will be add in the google doc for the final specifications. is the wallet will support multiple levels of security ?
+
+
+
+
+## Meeting - 28 September 2021 - (1300 ET)
+
+### Agenda
+
+- Next meeting base on the survey ( decision by the group)
+- Overview on eidas regulation/ EU wallet framework
+- Review comments on "Keith  presentation"
+- Review the continue discussion and work on terms, security architecture, level assurance 
+- any new topics 
+
+### Attendees
+- Thierry Thevenet 
+- Kai Wagner
+- Bernard Joly 
+- Chris Kelly
+- Ralf Knobloch
+
+
+### notes
+Base on survey and the members presents we will move the meeting @6PM CET 
+
+Presentation of the EU wallet status( see the slides).For the deployment There are 3 possibilties : each european members can select the model to build and distribute   the wallet  
+It should be interested for all members to have a vision on the different regulations in the word for  the wallet framework. i request some volunteer to present the status for USA, ASIA, UK or others.
+ 
+High security level, after some discussions on the "key recovery" .no recovery possibility should be the solution for the government. 
+action:  Ralph will present an use case ( key recovery needs) in the next 3 weeks.
+
+Cross border verification/Cross wallet usage : need to align the vision between all EU countries. some EU countries are more restrited today for the security requirements.
+
+
+
 ## Meeting - 7 September 2021 - (1300 ET)
 
 ### Agenda
