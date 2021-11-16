@@ -1,12 +1,20 @@
 # Wallet Security Document Draft
 
-### Introduction
+## Vision Summary
 
-Examples for use cases requiring different security levels:
+The Wallet Security working group enables SSI usecases with higher or diverse security requirements for issuers, wallet implementers and verifier. In the current SSI ecosystem the common trust relation is mostly observed between from the Verifier to the Issuer:
+
+![Status Quo](/images/standard.svg)
+
+Wallet Security tries to enable new and stronger trust relations between the wallet and the issuer as well as between wallet and verifier. One of SSI's main stength is to combine credentials and use cases of different domains in one wallet. Examples for use cases requiring different security levels might be:
 
 - Level 1: German government issues Digital Passport to recipient
 - Level 2: AWS issues “Solution Architect” certification to recipient
 - Level 3: Home Depot issues free membership card to recipient
+
+These examples show the diverse requirements for issuers and wallets on how to secure this credentials within one wallet. Therefore a wallet should be able to propagate its security capabilities and proof its authenticity to the issuer, this enables higher security use cases while not excluding credentials with lower needs. On the other side the verifier can proof his authenticity to the wallet and therefore enable the user to make better decisions whether or not too reveal his data in a self-sovereign world:
+
+![Evolution](/images/target.svg)
 
 ### Terminology
 
