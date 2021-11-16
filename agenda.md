@@ -19,6 +19,51 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 16 November 2021 - (6 PM CET)
+
+### Agenda
+
+1. restructing of the working group specification
+2. advancing wg output by forming potential new work items with subgroups of common interest
+ - differential credential security concept (security levels)
+ - device binding
+ - trusted verifier
+ - user authentication, 2FA
+ - wallet security information flow
+ - your input
+3. discussion on how to proceed with the big picture/vision
+
+### Attendees
+- Paul Bastian
+- Ian Bailey
+- Sebastian Bickerle
+- Dirk Thatmann
+- Keith Kowal
+- Kai Wagner
+- Thierry Thevenet
+- Stephen Curran
+
+### Notes
+    
+- Bernard might not participate on the next meetings, asking for help on the notes
+- Keith: the group is too small to tackle these many work items
+- Kai&Dirk: work items are best to get forward with diffrent opinion in the group
+- chicken&egg problem, when to advertise, get wallet implementers on board?
+- Keith: comparable security between wallets? customer needs..
+- Ian: 2FA, key management
+- agree that we can start on 1-2 work items and split work there
+- how to advertise to/motivate wallet implementers?
+    - gather requirements in a document?
+    - comparison table of all wallets?
+    - gather wallet implementers and contacts
+    - google spreadsheet?
+- vote 1: its good to start at least one work item
+- vote 2: start with differential credential security concept
+    - work item owners: Paul, Keith
+    - start with a strawman proposal, continously working on it
+    - google docs?
+- Dirk, Paul wants to working on device binding
+
 ## Meeting - 2 November 2021 - (6 PM CET)
 
 ### Agenda
