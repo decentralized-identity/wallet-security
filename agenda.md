@@ -19,6 +19,40 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 30 November 2021 - (6 PM CET)
+
+### Agenda
+
+1. work item proposal for differential credential security
+2. work item proposal for device binding
+3. wallet implementers consultation, questionnaire and spreadsheet
+4. discussion on how to proceed with the big picture/vision
+
+### Attendees
+- Paul Bastian
+- Oliver Lauer
+- Sebastian Bickerle
+- Dirk Thatmann
+- Sid Scharma
+- Kai Wanger
+- Chris Kelly
+- Keith Kowal
+- Shermined Salehi Esmati
+
+### Notes
+
+- presenting the differential credential security draft:
+    - https://docs.google.com/document/d/1M0XWGmOOpK3JY9lIMvgytpRHYcDiBN1yIqd1-2HnK9w/edit?usp=sharing
+    - please read, give feedback in comments
+    - filing the work item proposal this week
+- presenting the device binding draft:
+    - https://docs.google.com/document/d/1iJAB7VRe1P4wEaBOAb-g8Fn4JvyMXpkpEMkK06U1Qh4/edit?usp=sharing
+    - feedback: binding to peerDIDs instead of seperate attribute
+    - please read, give feedback in comments
+    - filing the work item proposal this week
+- started work on wallet implementers consultation
+    - trying to create a questionnaire to reach out
+
 ## Meeting - 16 November 2021 - (6 PM CET)
 
 ### Agenda
@@ -45,7 +79,7 @@ Password: 661333
 
 ### Notes
     
-- Bernard might not participate on the next meetings, asking for help on the notes
+- Bernard might not be able to participate on the next meetings, asking for help on the notes
 - Keith: the group is too small to tackle these many work items
 - Kai&Dirk: work items are best to get forward with diffrent opinion in the group
 - chicken&egg problem, when to advertise, get wallet implementers on board?
@@ -56,13 +90,13 @@ Password: 661333
     - gather requirements in a document?
     - comparison table of all wallets?
     - gather wallet implementers and contacts
-    - google spreadsheet?
-- vote 1: its good to start at least one work item
-- vote 2: start with differential credential security concept
+    - google spreadsheet
+- vote 1: its good to start at least one work item (agreed)
+- vote 2: start with work item differential credential security concept (agreed)
     - work item owners: Paul, Keith
     - start with a strawman proposal, continously working on it
-    - google docs?
-- Dirk, Paul wants to working on device binding
+    - google docs for easy commenting
+- Dirk, Paul want to work on device binding
 
 ## Meeting - 2 November 2021 - (6 PM CET)
 
