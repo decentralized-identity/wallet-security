@@ -12,6 +12,8 @@ The Wallet Security Working Group meets biweekly on Tuesday, 6pm Europe, 11am ET
 
 Calendar link is [here](https://calendar.google.com/event?action=TEMPLATE&tmeid=ZjE5YmJqMnA0Z25zMjkyNGNtMzI5YnVnNnNfMjAyMTEyMTRUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL) 
 
+Recordings are listed [here](https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=194851117)
+
 ## Meeting Agenda and Minutes
 
 Meeting Agenda and Minutes are maintained on HackMD and mirrored to Github.
