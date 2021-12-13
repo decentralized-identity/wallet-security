@@ -4,8 +4,7 @@ Device Binding is a building block for the wallet security that enables a high l
 
 ## Work Item Owners
 - Paul Bastian (paul.bastian@bdr.de)
-- ...
-- ...
+- Sebastian Bickerle (sebastian.bickerle@main-incubator.com)
 
 ## Outcome
 The overall intent from this work item is to produce a document that can be proposed as an input to Aries RFC or other SSI protocols.
@@ -15,5 +14,9 @@ The overall intent from this work item is to produce a document that can be prop
 - Test results, tests vectors
 - Estimated three month timeline
 
+## Draft document
+- [Google Docs](https://docs.google.com/document/d/1iJAB7VRe1P4wEaBOAb-g8Fn4JvyMXpkpEMkK06U1Qh4/edit#)
+
 ## Meetings
-- weekly meeting for the begining, more tbd
+- outcome and progress is presented at the biweekly Wallet Security WG
+- meetings and work shops will be announced at mailing list/slack
