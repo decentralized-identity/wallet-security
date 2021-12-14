@@ -2,7 +2,7 @@
 
 [![hackmd-github-sync-badge](https://hackmd.io/6hUuZIjGQpeLVAqcxdakZA/badge)](https://hackmd.io/6hUuZIjGQpeLVAqcxdakZA)
 
-[**WG projects**](https://github.com/topics/wg-ws) | [ DIF page](https://identity.foundation/working-groups/wallet-security.html) | [Mailing list](https://lists.identity.foundation/g/wallet-security) | [Meeting Recordings](https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=194851117) 
+[**WG projects**](https://github.com/decentralized-identity/wallet-security) | [ DIF page](https://identity.foundation/working-groups/wallet-security.html) | [Mailing list](https://lists.identity.foundation/g/wallet-security) | [Meeting Recordings](https://docs.google.com/spreadsheets/d/1wgccmMvIImx30qVE9GhRKWWv3vmL2ZyUauuKx3IfRmA/edit#gid=194851117) 
 
 _For this call, you are encouraged to turn your video on. This is a good way to build rapport given we are a large, disparate group experiencing a lot of churn._
 
@@ -14,10 +14,63 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 
 - Before your contribute - [**join DIF**](https://identity.foundation/join) and [sign the WG charter](https://bit.ly/DIF-WG-select1) (both are required!)
 - Time: Every Tuesday, 13:00-14:00 ET
-- [Calendar entry](https://calendar.google.com/event?action=TEMPLATE&tmeid=NGM5YnZhM2I1bXE1bmxhcGkyMDA0ZW1sMm5fMjAyMTA2MDFUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL)
+- [Calendar entry](https://calendar.google.com/event?action=TEMPLATE&tmeid=ZjE5YmJqMnA0Z25zMjkyNGNtMzI5YnVnNnNfMjAyMTEyMTRUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0&tmsrc=decentralized.identity%40gmail.com&scp=ALL)
 - [Zoom room](https://us02web.zoom.us/j/85747197140?pwd=RmJBcXd6blJidS9rZm9Fd2puclFhdz09), Meeting ID: 85747197140,
 Password: 661333
 </details>
+
+## Meeting - 14 December 2021 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. organisational stuff
+    - restructed github
+    - document summary
+    - holidays
+2. new work item for differential credential security
+    - [PR#7](https://github.com/decentralized-identity/wallet-security/pull/7)
+3. new work item proposal for device binding
+    - [PR#6](https://github.com/decentralized-identity/wallet-security/pull/6)
+4. presentation of Wallet Security concepts at german SDI project ([slides](https://github.com/decentralized-identity/wallet-security/blob/main/contributions/2021_12_07_sidifo_Walletsecurity_final.pdf))
+5. wallet implementers consultation, questionnaire and spreadsheet
+6. wallet security implementation document from Canada
+
+### Attendees
+- Paul Bastian
+- Ian Bailey
+- Keith Kowal
+- Kai Wagner
+- Darell O
+- Sebastian Bickerle
+- Shaked Vax
+
+### Notes
+
+- organsiational stuff
+- new work items
+    - started device binding
+    - differential credential security pending
+    - Paul is sending out doodle for kickoffs in the new year
+- updates on regulatory requirements:
+    - german BSI publishes first paper on SSI with blockchain: https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Krypto/Eckpunkte_SSI_DLT.pdf?__blob=publicationFile&v=2
+        - focussing more on DLT and less on wallets
+    - fast iterations on eIDAS 2.0 Toolbox, also focussing on wallet security
+        - the proposed building blocks are all relevant & neccessary to upcoming eIDAS proposal
+    - guidance/starting document for security analysts for SSI from Canada: https://github.com/hyperledger/aries-mobile-agent-react-native/tree/main/docs/design
+        - pool knowledge on PIN/Biometrics authentication and other ideas from different use case experiences in Canada/Germany and draft Wallet Secuirty documents from them
+        - common SSI-stack idnependent concept in DIF WAllet Security WG
+        - having an Aries-specific implementation in Appendix or Aries RFC
+- wallet security presentation
+    - link to slides: https://github.com/decentralized-identity/wallet-security/blob/main/contributions/2021_12_07_sidifo_Walletsecurity_final.pdf
+    - works well as a summary and vision for the DIF WAllet Security WG
+    - free to share
+- wallet security comparison
+    - goal: contact wallet implementers, get status quo, motivate
+    - proposed google forms:
+        - https://docs.google.com/forms/d/e/1FAIpQLSeZE3sL7g-ry2l_iRbjr3PsMRdguznw5jBvx1vha0c6LSzy4Q/viewform
+
+
+
 
 ## Meeting - 30 November 2021 - (6 PM CET)
 
