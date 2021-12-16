@@ -31,7 +31,7 @@ Password: 661333
     - [PR#7](https://github.com/decentralized-identity/wallet-security/pull/7)
 3. new work item proposal for device binding
     - [PR#6](https://github.com/decentralized-identity/wallet-security/pull/6)
-4. presentation of Wallet Security concepts at german SDI project ([slides](https://github.com/decentralized-identity/wallet-security/blob/main/contributions/2021_12_07_sidifo_Walletsecurity_final.pdf))
+4. presentation of Wallet Security concepts at german SDI project ([slides](https://nextcloud.idunion.org/s/D2cbMi6w8t3nPYj))
 5. wallet implementers consultation, questionnaire and spreadsheet
 6. wallet security implementation document from Canada
 
@@ -61,7 +61,7 @@ Password: 661333
         - common SSI-stack idnependent concept in DIF WAllet Security WG
         - having an Aries-specific implementation in Appendix or Aries RFC
 - wallet security presentation
-    - link to slides: https://github.com/decentralized-identity/wallet-security/blob/main/contributions/2021_12_07_sidifo_Walletsecurity_final.pdf
+    - link to slides: https://nextcloud.idunion.org/s/D2cbMi6w8t3nPYj
     - works well as a summary and vision for the DIF WAllet Security WG
     - free to share
 - wallet security comparison
