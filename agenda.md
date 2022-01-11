@@ -19,6 +19,55 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 11 January 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. organisational stuff
+    - device binding kickoff
+    - wallet implementers survey
+2. review comments for differential credential security
+3. review comments for device binding
+4. updates from eIDAS consultations
+5. roadmap 2022
+
+### Attendees
+
+- Paul Bastian
+- Bernard Joly
+- Ian Bailey
+- Kai Wagner
+- Oliver Lauer
+- Darell O Donell
+- Sebastien Bickerie
+- Torsten
+- Keith Kowal
+- Shaked Vax
+
+### Notes
+
+- organsiational stuff
+    - [kickoff doodle](https://doodle.com/poll/bttcdxcqdn9cpziu) for device binding work item will close tomorrow
+    - please share and fill out the [wallet implementers survey](https://docs.google.com/forms/d/e/1FAIpQLSeZE3sL7g-ry2l_iRbjr3PsMRdguznw5jBvx1vha0c6LSzy4Q/viewform) to get input from the community
+- review comments for differential credential security
+    - required LoA should be encoded in the verification/presentation request directly for the best UX
+    - continung discussion on LoAs
+        - overall LoA -> LoA of the weakest link
+        - LoA evalutation consists usually of different subsections(Identity proof, Storage security, Holder authentication, Revocation, etc..)
+        - what is the verifiers opinion/role here? verifier accepts the LoA for his usecase?
+        - verifier has its own rules/business logic in any case
+        - LoA implicitly defined by the Issuer(i.e in the schema) vs LoA is encoded as standardized metadata
+        - encoded metadata about LoA should be preferred
+        - how does that integrate into W3C VC model?
+        - encoded LoA acts as a useable building block but verifier can still make his own decision anyway
+        - How to deal with many LoA/Trust Frameworks?
+        - LoA solving in the wallet alone is not possible -> needs a better scope
+        - -> Wallet Securit yWG should provide wallet-specific building blocks to be used for LoA evaluation (first)
+        - solving the whole LoA riddle might not be the desired goal (for now)
+    - focus on device/wallet binding and holder binding is very important for success of regulated use cases
+    - continue here next week on device binding work item
+
+
 ## Meeting - 14 December 2021 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
