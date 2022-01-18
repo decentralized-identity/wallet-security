@@ -19,6 +19,63 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+
+## Device Binding Kickoff - 18 January 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. expectations
+2. organisational stuff
+    - repo & place for notes, document, etc..
+    - meeting intervals
+    - GoogleDocs or Markdown?
+3. review for the draft
+4. building a document structure
+5. goals & roadmap 2022
+
+### Attendees
+
+- Paul Bastian
+- Kai Wagner
+- Ian Bailey
+- Bernard Joly
+- Oliver Lauer
+
+### Notes
+- expectations:
+    - Bernard: binding for KYC credentials, bind credentials to the wallet and user, mobile and cloud
+    - Ian: high assurance wallets and credentials, credentials bound to the wallet, preventing fraud, stealing, W3C VCs have no binding to wallet, three open source funding projects to build a wallet, relation to key management
+    - Oliver: german banking wallets, eIDAS 2.0 banking wg, policy, need for hardware binding in the banking sector with high reach, compromise security<>reach
+    - Kai: compromise between hardware binding <>credentials with backup possibilities, differentiate from smartphone vendors
+    - Paul: enable high security for regulatory use cases, have standardized
+- orga:
+    - [work item landing page](https://github.com/decentralized-identity/wallet-security/blob/main/work_items/device_binding.md)
+    - [calendar entry](https://www.google.com/calendar/event?eid=NXRpM25jdWYyZTk2YXZycmJyMGY0dHIwMWRfMjAyMjAxMThUMTcwMDAwWiBkZWNlbnRyYWxpemVkLmlkZW50aXR5QG0)
+    - biweekly call
+    - move to github markdown document
+- additional items for the draft
+    - mobile and cloud solutions
+        - it seems most people require mobile solutions first
+    - share knowledge and guidance for implementing wallet in mobile OS
+        - Andorid
+        - iOS
+    - difference between W3C vs AnonCreds
+        - enable both
+    - relation to AnonCreds Linksecret
+- document structure
+    - https://docs.google.com/document/d/1iJAB7VRe1P4wEaBOAb-g8Fn4JvyMXpkpEMkK06U1Qh4/edit#
+    - reviewed summary, motivation, existing components, requirements sections
+    - todos:
+        - review&extend summary section
+        - add regulatory frameworks to the motivation section
+        - add information/links/knowledge to each component in the existing components section, e.g. to security, market share, personalization, key mangement, (dis)advantages
+        - add information/links/knowledge on Android implementing guidance
+        - add information/links/knowledge on iOS implementing guidance
+        - write something to W3C/AnonCreds relation
+- goals & roadmap
+    - draft by end of march
+
+
 ## Meeting - 11 January 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
