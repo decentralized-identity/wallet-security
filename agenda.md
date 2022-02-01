@@ -19,6 +19,76 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 02 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. wallet authentication
+
+### Attendees
+
+- Paul Bastian
+- Bernard Joly
+- Ian Bailey
+- Sebastian Bickerle
+
+### Notes
+- wallet authetnication -> neccessary because user authentication happens locally between user and wallet
+- therefore need to trust the wallets implementation
+- who should be able to check the wallet authenticaiton?
+    - only issuer
+    - both issuer and verifier
+- use smartphone OS mechanisms like AndroidSafetyNet/DeviceChecker
+- how to implement that?
+    - 1. information stored in a VC
+        - wallet implementer issues a VC to the wallet 
+        - wallet implementer needs additional backend service to issue VCs
+        - information might be old/request new VCs on-the-fly neccessary
+        - do you hide that from the user?
+        - who is able to request it?
+        - could scale better
+        - wallet issuer could revoke VCs for "broken" app versions
+    - 2. seperate (DIDComm) protocol
+        - requesting party could provide a nonce
+        - allows fresh check
+    - prevent correlation
+
+## Meeting - 24 January 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. review device binding kickoff
+2. wallet implementers survey
+3. implications of eIDAS results (Architecture and Reference Framework 0.1)
+4. outlook for differential credential security
+5. roadmap 2022
+
+### Attendees
+
+- Paul Bastian
+- Bernard Joly
+- Kai Wagner
+- Chris Kelly
+- Sid Sharma
+- Oliver Lauer
+- Shaked Vax
+- Stephen Curran
+- Torsten Lodderstedt
+- keith Kowal
+
+### Notes
+2. wallet survey: review for the next meeting in detail. more answers are coming by european persons.
+
+- wallet survey: https://docs.google.com/spreadsheets/d/1HjSnF1TRoFdQJNT68HlqZtOaqxGBytAr02cw7WPb6LE/edit#gid=1868476464
+
+3.eIDAS/framework 0.1. Oliver will share the draft version 0.1. after the meeting.  there are three credentials type. There is more a consolidation of all requests comming from all european members. Document is in early stage. intoduction of new term "electronic attestation attribut". 
+
+4. outlook for differential credential security.
+We need to work a new work item proposal. We are looking for workitem owner. Kai Wagner will check for the next call ( action).Need contributors for this work item.
+
+5. roadmap 2022
+expectation for 2022: for the next meeting, all members should propose some work items for the next meeting ( two weeks).
+
 
 ## Device Binding Kickoff - 18 January 2022 - (6 PM CET, 12pm EST, 9am PST)
 
