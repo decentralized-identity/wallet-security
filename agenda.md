@@ -19,7 +19,63 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
-## Meeting - 02 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
+## Meeting - 08 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. wallet implementers survey results
+2. discussion on wallet authentication
+3. discussion on verifier authenticity
+
+### Attendees
+
+- Paul Bastian
+- Bernard Joly
+- Ian Bailey
+- Kai Wagner
+- Sebastian Bickerle
+- Anne Göllnitz
+- Jorge Flores
+- Russell Castagnaro
+- Oliver Lauer
+- Chris Kelly
+- keith Kowal
+
+### Notes
+
+- Wallet implementers survey:
+    - results: https://docs.google.com/spreadsheets/d/1ao9DSDhtn0dvOTAFp-Uzs_UlLDzwVnrg9eXm4L5syiY
+    - Output PDF: https://github.com/decentralized-identity/wallet-security/blob/main/contributions/wallet_implementers_survey_results_v1.pdf
+    - in short: most wallet implementers rely on mobile and do not support multiple security levels yet
+- Wallet authentication discussion from last week
+    - who should be able to check the wallet authenticaiton?
+        - optional in any way
+        - available only to issuers or both issuers and verifiers
+        - wallet authentication is less intreseting to verifiers in the offline usecase(photo comparison)
+        - thinking about the usecases..
+    - how to implement that?
+        - A: information stored in a VC
+            - good integration
+            - works offline
+            - old information/no freshness
+        - B: interactive protocol between wallet and issuer/verifier
+            - freshness check
+            - missing a protocol/implementation effort needed
+    - does online/offline usecases make a difference?
+    - should be aligned to the stack
+    - hybrid mobile/cloud wallets: wallet authentication mechanism usable
+    - pure cloud wallet: wallet could rely on HSM mechanisms in the backend
+- excursion of non-trust wallet architectures
+    - required to prevent copy of credential for high security
+    - put holder authentication into the credential itself or third party
+- Trusted Verifier - UX and security checks performed by the wallet
+    - concept screens from german project: https://github.com/decentralized-identity/wallet-security/blob/main/images/Trusted_Verifier_Slide.png
+        - requirement from regulatory viewpoint
+        - similar approaches in existing wallets
+        - similar mechanism for issuers
+        - harmonization possible?
+
+## Meeting - 01 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
 
@@ -53,7 +109,7 @@ Password: 661333
         - allows fresh check
     - prevent correlation
 
-## Meeting - 24 January 2022 - (6 PM CET, 12pm EST, 9am PST)
+## Meeting - 25 January 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
 
