@@ -19,6 +19,39 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 15 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. cochair setup
+2. interest for sample implementation
+3. discussion on integration, e.g. AnonCreds/Aries
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Anne Göllnitz
+- Oliver Lauer
+
+### Notes
+
+- Bernard is moving away from OneSpan and cannot fulfil the co-chair role
+    - 2 cochairs remaining for Wallet Security (Oliver still part, was inactive)
+    - focus on wallet security call next week
+- discussion on interest for implementing the device binding feature
+    - achieving interoparability tests with multiple implementations
+    - Wallets:
+        - BCGov: Aries/AnonCreds with iOS/Android/SE
+        - eSatus: Aries/AnonCreds with iOS/Android
+        - ID-Wallet: Aries/AnonCreds with iOS/Android
+    - Issuer/Verifier:
+        - acapy, .NET
+    - talk to Lissi Team, Stephen Curran
+- Aries -> create a new Aries RFC to specify the DIDComm protocol for device binding
+    - two separate protocols for device binding/wallet authentication or same protocol?
+- start a workshop with technical experts for first proposal focusing Aries/Anoncreds
+
 ## Meeting - 08 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
