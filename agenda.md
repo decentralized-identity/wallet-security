@@ -19,7 +19,54 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
-## Meeting - 15 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
+## Meeting - 22 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. cochair setup information
+2. device binding
+    - Aries RFC standardization path : https://hackmd.io/j7tSL_QPTPiaPhZh_xLDvA
+    - Verification mechanism discussion
+    - implementers interop group
+3. wallet authentication
+    - discussion between direct and VC option : https://hackmd.io/0vFZNmD7R-2NTJbiQ2e3sA
+    - roadmap to standardize in Aries RFC
+
+### Attendees
+
+- Paul Bastian
+- Fabien Petitcolas
+- Oliver Lauer
+- Ian Bailey
+- Darrell O'Donell
+- Sebastian Bickerle
+- Tim Bloomfield
+
+### Notes
+
+- Bernard steps down as co-chair as he leaves OneSpan
+    - OneSpan will figure out if they want to replace him and will observe for now
+    - open for new cochair applications, Paul+Oliver for now
+- device binding:
+    - Paul presents Option 1a to use a separatre DIDComm protocol
+    - Sebastian presents Option 1b to extend existing Credential Issuance protocols
+    - questions:
+    - reuse libindy nonce or use separate one?
+        - new one is probably the better idea
+    - does request credential contain raw attributes or only blinded link secret?
+    - does the wallet check/match the credential preview from the offer credential step with the actual attributes received in the credential issuance step
+    - DIDComm specifics: inline, embedded or appended?
+        - best to PR to aries-rfc and discuss in the Aries Group Meeting
+    - opinions between 1a and 1b:
+        - Darrell: pro option 1a as its cleaner
+        - Tim: probably combined with wallet authentication, 1 a is cleaner but 1b is faster?
+        - Paul: 1a to avoid multiple credentialm issue protocols
+        - Sebastian: 1b to avoid additional messages
+- wallet authentication
+    - we briefly started the discussion on wallet authentication standardization and the technical solutions, continue here next week
+    - https://hackmd.io/0vFZNmD7R-2NTJbiQ2e3sA#Wallet-Authentication
+
+## Device Binding Meeting - 15 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
 
