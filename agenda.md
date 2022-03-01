@@ -19,6 +19,48 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 1 March 2022 - (6 PM CET, 12pm EST, 9am PST)
+
+### Agenda
+
+1. discussion on device binding
+    - Aries RFC standardization path : https://hackmd.io/j7tSL_QPTPiaPhZh_xLDvA
+    - Issuance Option [1a](https://hackmd.io/j7tSL_QPTPiaPhZh_xLDvA) or [1b](https://hackmd.io/@sbickerle/rka12zWe5)
+    - Verification mechanism discussion
+2. discussion on wallet authentication
+    - Issuance Option [1, 2 or 3](https://hackmd.io/0vFZNmD7R-2NTJbiQ2e3sA#Wallet-Authentication)
+3. roadmap to standardize in Aries RFC
+4. OpenID Connect outlook
+
+### Attendees
+
+- Paul Bastian
+- Kai Wagner
+- Sebastian Bickerle
+- Ian Bailey
+- Lance Byrd
+- Paul Dunphy
+- Bernard
+
+### Notes
+
+- represent Device Binding Issuance Options 1a and 1b
+    - Sam Curran form Aries WG tends to Option 1a, can be reused for other purposes
+    - Ian is favoring 1a
+    - Sebastian is favoring 1b for having less messages
+- verification discussion is similar, Option 2a and 2b with separate DIDComm protocol vs decorator
+- don't exclude any option for now but start implementation/testing with only one
+- represent wallet authentication (Christian Bormann proposed Option 3, renamed to 2b)
+    - Option 1 legal issues?
+    - Option 2a might not be secure enough as the Wallet Auth VC could be extracted and used elsewhere -> Wallet Authenticaiton only works in combination with device binding
+    - so therefore Wallet Authentication must probably used in combination with Device Binding anyway
+    - -> combine the protocols
+    - followup questions: create multiple Wallet Auth VC with device binding keys, one for each device-bound credentials
+    - to ensure the best privacy(we lose some anyway) Wallet Authentication should be used cautoiusly, as it possibly correlates all presented credentials?
+    - tradeoff between privacy and security
+- next steps: combine device binding 1a & wallet authentication 2b to combined protocol, propose as Aries RFC PR to extend the discussion in the broader community
+- get insights and views from W3C / non-AnonCreds perspective
+
 ## Meeting - 22 Feburary 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
