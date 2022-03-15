@@ -19,6 +19,74 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 15 March 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. continue discussion and planning for device binding & wallet authentication
+    - Aries RFC standardization path : https://hackmd.io/j7tSL_QPTPiaPhZh_xLDvA
+    - possible combination of both
+2. roadmap to standardize in Aries RFC
+3. OpenID Connect outlook
+
+### Attendees
+
+- Paul Bastian
+- Lance Bryd
+- Ian Bailey
+- Oliver Lauer
+- Bernard Joly
+- Sebastian Bickerle
+
+### Notes
+
+- Document shared and presented by Sebastian: https://hackmd.io/@sbickerle/SyLsYsmZq
+    - challenges and solutions on device binding presentation as attachments
+    - attachments for Present Proof Protocol 1.0 & 2.0
+- discussion requires a full lifecycle/full walkthrough(mobile now, cloud later):
+    - 0. Wallet Authentication scheme is defined
+        - wallet implementer goes through and audit / certfication process
+        - wallet implementers register in the trust registry
+        - issuers requests and specify list of acceptable wallets for his purposes
+    - 1. Wallet Authentication VC
+      - starts with the user installing the wallet
+      - wallet contacts the wallet implementer backend server
+      - perform Wallet Authentication (Google SafetyNet and iOS DeviceChecker)
+      - generate hardware-backed keys
+      - check key attestation (only Android unfortunately?)
+      - Wallet implementer issues a VC to the Wallet including:
+          - wallet name, version, etc..
+          - device hardware, OS version
+          - wallet authentication status
+          - hardware public key
+          - optional: key attestation
+          - holder authentication mechanisms (no reference data itself)
+      - data included is a tradeoff between privacy and security
+      - the wallet implementer can choose to exclude some information
+      - later reissuance / refresh planned
+    - 2. Issuer are issuing a device-bound credential
+      - request/discover wallet security capabilities
+      - Issuer requests Wallet Authentication VC presentation
+      - Wallet presentents proof of Wallet Authenticaiton VC
+      - challenge-response for the hardware-backed public key (to be [included in the presentation](https://hackmd.io/@sbickerle/SyLsYsmZq) or [separate DIDComm protocol](https://hackmd.io/j7tSL_QPTPiaPhZh_xLDvA))
+      - check wallet authentication matches my requirements
+      - issuer issues his own VC that is bound to the hardware-backed key 
+    - 3. Verifier proofs a device-bound credential from a trustworthy device
+      - request/discover wallet security capabilities
+      - Verifier requests hardware-backed VC presentation
+      - Wallet presents proof of hardware-backed VC
+      - challenge-response for the hardware-backed public key (to be included in the presentation or separate DIDComm protocol)
+      - optional: Verifier requests the Wallet Authentication VC presentation
+      - optional: Wallet presentents proof of Wallet Authenticaiton VC
+  - lateron: wallet detects changes and requests a refreshed wallet authentication VC
+      - time passed
+      - OS version update
+      - change of hardware keys?
+- further discussion:
+    - does the Verifier need to check the Wallet Authetnaction VC as the Issuer already did this?
+    - one Wallet Authentication VC per secure credential?
+    - semantic context
+
 ## Meeting - 1 March 2022 - (6 PM CET, 12pm EST, 9am PST)
 
 ### Agenda
