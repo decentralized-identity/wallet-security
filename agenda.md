@@ -19,6 +19,98 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 29 March 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Specify requirements for Wallet Authentication issuance
+2. Wallet Authentication VC Scheme
+3. Challenge-response Aries RFC Draft
+4. Differences to cloud scenario
+
+### Attendees
+
+- Paul Bastian
+- Caspr Roelofs
+- Bernard Joly
+- Christian Lungu (Jolocom)
+- Lance Byrd
+- Ian Bailey
+
+### Notes
+
+![](https://i.imgur.com/m8Atrfw.png)
+- really doog discussion on the sequence diagramm
+    - after the first issuance the device key is used
+        - reuse hardware key -> bad privacy/super cookie -> you need keys for each party
+        - ideally we don't want to put multiple keys into one wallet authentication credential
+        - wallet authentication process upfront or on-demand?
+            - upfront: simpler, regular refresh needed
+            - on-demand: scalability, freshness
+        - discussion result: wallet authentication VC on-demand creation seems like the best solution
+        - move "Wallet Issuance" process of app&key attesation inside "Issuance" process after reuqesting the wallet authentication VC (therefore on demand)
+        - one per issuer, anchor issuer's DID into the VC
+        - verifiers could be served the very same VC as the issuer saw
+    - wallet issuer needs to handle and limit access to app attestations
+- discuss attestation formats
+    - learn from or use https://w3c.github.io/webauthn/#sctn-defined-attestation-formats ?
+- protocols between wallet issuer and wallet do not need to be standardized as they are one legal entity
+    - but provide optional design for security/reference (not mandatory)
+- next steps: 
+    - fix sequence diagramm
+    - standardize crednetial presentation with challenge response most important
+
+
+## Meeting - 22 March 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. review device binding lifecycle from last session
+2. discussion on embedding keys or dids of keys into the VC
+3. identify building blocks and match existing components
+4. discussion to standardize in Aries RFC
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Christian (Jolocom)
+- Tim Bloomfield
+- Anne Göllnitz
+- Romuald Barbe
+- Lance Byrd
+
+### Notes
+
+- review and discuss the lifecycle (commenting in google docs)
+    - https://docs.google.com/document/d/1iJAB7VRe1P4wEaBOAb-g8Fn4JvyMXpkpEMkK06U1Qh4/edit#heading=h.65alklkg59te
+- whats (in) the trust registry?
+    - list of multiple wallet issuers and their certification status
+    - is data stored in a (global) trust registry and/or a verifiable data registry?
+        - which verifiable data registry if wallet supports multiple DID methods?
+        - is there a possiblity for a global wallet trust registry?
+    - country-specific wallet trust registry?
+    - trust registry bound to the legal framework?
+        - e.g. Pan Canadian Trust Framework specifies a list of wallets that are eligible and issuers can trust all wallets from this list
+        - separate trust registry in eIDAS etc..
+    - content
+        - wallet isser and his legal representation
+        - contact information
+        - versions
+        - certification body
+        - certification status/expiration
+- discussion on embedding keys or dids of keys into the VC
+    - goal to rotate key in "lost phone" case
+    - neccessary for high-security usecases - you need to start again
+    - did document layer adds lots of complexity
+    - migration to new phone scenario that proves the old credential in automatic exchange for a new one contacting the issuer
+        - fear of adding complexity for little benefit
+- next steps:
+    - Specify requirements for Wallet Authentication issuance
+    - Wallet Authentication VC Scheme
+    - Challenge-response Aries RFC Draft
+    - Differences to cloud scenario?
+
 ## Meeting - 15 March 2022 - (6 PM CET, 1pm EST, 10am PST)
 
 ### Agenda
