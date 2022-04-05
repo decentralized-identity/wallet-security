@@ -19,7 +19,65 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
-## Meeting - 29 March 2022 - (6 PM CET, 1pm EST, 10am PST)
+## Meeting - 5 April 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Review sequence diagram for secure credential lifecycle
+2. Wallet Authentication VC Scheme
+3. Challenge-response Aries RFC Draft
+4. Attestation formats
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Christian (Jolocom)
+- Sebastian Bickerle
+- Russeell Castagnaro
+- Oliver Lauer
+- Bernard Joly
+
+### Notes
+
+- discussion on reviewed sequence diagram 
+    - ![](https://i.imgur.com/gdDxvZB.png)
+    - no major concerns
+    - option for verifier to request on-demand attstation?
+- attestion formats
+    - Option 1 : https://w3c.github.io/webauthn/#sctn-attestation
+    - Option 2 : https://datatracker.ietf.org/doc/html/draft-ietf-rats-eat-12
+    - Option 3 : define new stuff?
+        - the existence of the wallet authentication VC issued by the certifying entity gives assurance by the trust framework?
+        - details on attestations are maybe left out
+- is VC a preferred container for attestation?
+    - buildin support
+    - get all the relevant information in one transaction
+    - transform complexity of attestation into simplicity of VC
+- Schema of Wallet Authentication VC:
+    - content
+        - identity of the certifying entity (issuer of this VC)
+        - wallet name and version 
+        - hardware public key
+        - status/expiration
+        - holder authentication mechanisms (no reference data itself)
+    - question to discuss: Should the Wallet Authentication VC reveal the wallet name and version? (suggested by David Chadwick)
+        - classical security vs privacy tradeoff
+        - prevent market force/centralization?
+        - could add complexity
+        - wallets could be identified on other metadata in the Wallet Authentication VC
+- Who is the Certifying entity?
+    - Option 1 : the Wallet issuer backend service
+    - Option 2 : Trusted Third Party
+        - faster bootstrap, one service could support multiple wallets
+        - more centralisation
+- Next Steps:
+    - Aries RFC Draft
+    - Whats the best Option on attestation formats?
+    - Whats the best Option on Certifying entity?
+
+
+## Meeting - 29 March 2022 - (6 PM CET, 12am EST, 9am PST)
 
 ### Agenda
 
