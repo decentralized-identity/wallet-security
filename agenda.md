@@ -19,6 +19,143 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 19 April 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Encoding of hardware public key (did:key vs base64-encoded JOSE)
+2. Usage of hardware binding in W3C Credentials
+3. updates on [Challenge-response Aries RFC Draft](https://github.com/hyperledger/aries-rfcs/pull/729)
+4. hardware types/ user authentication types
+5. discussion on including key attestations
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Sebastian Bickrle
+- Tim Bloomfield
+- Russell Castagnaro
+
+### Notes
+
+- updates on the Aries Device Binding Attachments RFC
+    - https://github.com/hyperledger/aries-rfcs/pull/729
+    - presented at Aries Working Group meeting on April 13
+    - good feedback and appreaciation
+    - minor tweaks
+    - implementing roadmap needed
+        - wait until no further feedback incoming to start implemention and move to DEMONSTRATED
+        - Ontario intrested to support on AFJ/acapy
+        - lissi intrested to support .NET
+        - bdr intrested to support acapy
+- discussion on key encoding
+    - Option 1: did:key
+        - common in SSI space, very space-efficient (57 chars), lacking library support, not an official standard
+    - Option 2: JWK
+        - common throughout industry, not space-efficient(244 chars), good library support, IETF standard
+        - possible as DID method soon: https://github.com/quartzjer/did-jwk/blob/main/spec.md
+    - Option 3: ASN1 X509 Public key
+        - common throughout industry, a little dated(ASN1), somewhat space-efficient (base64encoded 124chars), good library support & standardized
+    - Option 4: CBOR-encoded COSE etc..
+        - not compatible with current W3C/Anoncreds encoding, missing standardization/libraries
+    - Option 1&2 are most favored, continuing discussion...
+- Wallet Authentication VC data
+    - types for secure keystorage
+        - Trusted Execution Environment (Android)
+        - SecureEnclave (iOS)
+        - SecureElements (embedded, external, eUICC, eSIM)
+        - TPM
+        - CloudHSM
+    - types for user authentication
+        - Android SystemPIN/Pattern (no details possible)
+        - Application-level PIN (4digit / 6digit)
+        - iOS SystemPasscode (no details possible)
+        - iOS Biometrics 
+        - Android Biometrics (quite some differences in here)
+        - Application-level Biometrics (wallet-specific)
+        - SecureElement PIN (4digit / 6digit)
+    - thought experiments on real life sceanrio:
+        - issuer/verifier requests Wallet Authentication VC and parses that
+        - reading the wallet name and looking up the according trust assertions/certifications in an external trust registry
+        - match the properties of the phone with the requirements of your specific regulated use case
+        - if the certifying entity is based on the regultory trust framework, then the Wallet Authentication VC could reference a specific levle of assurance of this framework
+            - certifying entity does heavy lifting of matching phone properties to Level of Assurance
+        - if the certifying entity is the wallet issuer, then the Wallet Authentication VC probably references more general properties of the wallet (not specific to a trust framework, because it doesn't know where it will be used)
+            - issuer does heavy lifting of matching phone properties to Level of Assurance
+
+## Meeting - 12 April 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Wallet Authentication VC Scheme
+2. Encoding of hardware public key (did:key vs base64-encoded JOSE)
+3. Usage of hardware binding in W3C Credentials using subject id or additional keys?
+4. [Challenge-response Aries RFC Draft](https://github.com/hyperledger/aries-rfcs/pull/729)
+5. discussion on attestation formats
+
+### Attendees
+
+- Paul Bastian
+- Luis Remirez Coronas
+- Christian (Jolocom)
+- Leon Schöneich
+- Sebastian Bickerle
+- Bernard Joly
+- Ian Bailey
+
+### Notes
+
+- Aries RFC Draft pull request 
+    - https://github.com/hyperledger/aries-rfcs/pull/729
+    - pitching in Aries Working Group (4pm CET wednesday)
+    - implementing roadmap
+        - acapy and dotnet frameworks
+        - reaching out for contributions
+- Whats the best Option on Certifying entity?
+    - Option 1 : the Wallet issuer backend service
+    - Option 2 : Trusted Third Party
+    - Option 3 : do not specify / trust framework dependent
+    - general opinion favors Option 3, we should not force anything on the legal status of the certifying entity and leave that to the trust framework
+- Wallet Authentication VC
+    - What type of credential?
+        - define schemes for both AnonCreds (on-ledger) and W3C type (schema.org)
+        - ultimate decision is dependant on trust framework
+    - Which attributes?
+        - identity of the certifying entity (issuer of this VC)
+        - wallet name and version(alpha,beta, production)
+        - hardware public key
+        - hardware type and attestation?
+        - issuance date
+        - expiration date
+        - holder authentication mechanisms (no reference data itself) -> intresting for regulated use cases, refeering to different mechanisms in an enumeration
+    - open topics/to define:
+        - mechanisms for hardware type
+        - mechanisms for holder authentication
+        - include hardware attestation?
+    - status -> relying on revocation/expiration
+    - Should the Wallet Authentication VC reveal the wallet name and version?
+        - adds complexity
+        - other meta data could probably reveal wallet identity
+        - trust framework could decide this
+        - label wallet name and version as "UNKNOWN"
+    - Encoding of hardware public key
+        - did:key (fairly short, common in SSI space)
+        - b64-encoded JOSE (better standardized, better library support,longer string, needs reencoding with base64 for Anoncreds)
+        - contact DIF Crypto work item on key encoding
+    - Whats the best Option on attestation formats?
+        - do we need attestation formats inside the VC?
+        - leaving it out of the credential and let the certifying entity handle complexity of attestations?
+        - would ease the process
+- Usage of hardware binding in W3C Credentials
+    - using subject id or additional keys?
+- Next call:
+    - Should we include hardware attestation into the VC?
+    - specify mechanisms for hardware type
+    - specify mechanisms for holder authentication
+    - get more insight into usage of hardware binding in W3C Credentials
+    - decision on encoding of public hardware key
+
 ## Meeting - 5 April 2022 - (6 PM CET, 1pm EST, 10am PST)
 
 ### Agenda
