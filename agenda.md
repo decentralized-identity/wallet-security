@@ -19,6 +19,70 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 03 May 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Feedback from IIW#34
+2. Encoding of hardware public key
+3. Usage of hardware binding in W3C Credentials
+4. updates on [Challenge-response Aries RFC Draft](https://github.com/hyperledger/aries-rfcs/pull/729)
+5. standardisation ideas for communication between wallet and certifying entity
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Sebastian Bickerle
+- Tim Bloomfield
+- Oliver Lauer
+- Rodolfo Miranda
+- Azeem Ahamed
+- Darrell O'Donnell
+
+### Notes
+
+- feedback from IIW
+    - https://nextcloud.idunion.org/s/r9Lkk4TQRJTBxR7
+    - Paul hosted a session on Wednesday at IIW
+    - good feedback and appreciation from the community
+    - another session on combining webauthN/FIDO to device binding
+        - possible but complicated
+    - trusted connections -> trusted verifier problem
+- encoding of public key discussion
+    - Option 1: did:key (common in SSI space, very space-efficient (57 chars), lacking library support, not an official standard)
+    - Option 2: JWK+base64-encoding (common throughout industry, not space-efficient(244 chars), good library support, IETF standard
+    - Option 2a: possible as DID method: https://github.com/quartzjer/did-jwk/blob/main/spec.md
+    - Option 2/2a offers standards-compliance and library support, which is in best interest for regulated use cases -> favoring this over did:key
+- Usage of hardware binding in W3C Credentials
+    - looking for first examples (Christian)
+- updates on Challenge-response Aries RFC Draft
+    - still awaiting more feedback
+    - PR: https://github.com/hyperledger/aries-rfcs/pull/729
+    - requires one reviewer
+    - Sebastian attends Aries WG tomorrow
+    - start implementation after merge
+- standardisation ideas for communication between wallet and certifying entity
+    - idea:
+        - wallet issuers don't want the burden of running an own backend service as certifying entity, might use existing one from trust service provider or similar trusted party
+        - therefore stnadardization can make sense to have a common interface for certifying entity
+        - optional flow, you can build your own API
+        - follow up with standardisation after initial test implementation
+    - advantages:
+        - reference the standardized communication/guidance for regulartory frameworks
+        - it might be easier to follow a given path than rolling your own ideas
+        - could boost competition in wallet market as wallets don't need to run a certifying entity
+        - bundling resources into the certifying entity leads to better implementations
+    - disadvantages:
+        - could limit competition as standards lock in on specific tech
+    - Wallet Authentication VC data could differ depending on regulatory framework/trust framework
+        - should define (mandatory) fields but accept optional additional attributes
+        - conformance criteria from individual trust framework could mandate other fields in specific use cases out-of-scope of this spec
+- next steps:
+    - Usage of hardware binding in W3C Credentials
+    - Discuss some ideas how to build communication between wallet and certifying entity
+
+
 ## Meeting - 19 April 2022 - (6 PM CET, 1pm EST, 10am PST)
 
 ### Agenda
