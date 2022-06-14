@@ -19,6 +19,252 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 14 June 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Vote for group meeting time slot
+2. Usage of hardware binding in W3C/Anoncreds Credentials with examples
+3. Hardware-binding flow drafts for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI)
+4. Alternative Device Binding ideas without device binding attachments
+
+### Attendees
+
+- Paul Bastian
+- Paul Grehan
+- Ian Bailey
+- Ivan Gladushko
+- Tim Bloomfield
+- Oliver Lauer
+
+### Notes
+- reevaluation of time slot for the group meetings
+    - https://doodle.com/meeting/participate/id/bWn8N0Wa/vote
+- Hardware-binding flow drafts for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI)
+    - https://bitbucket.org/openid/connect/src/master/openid-connect-4-verifiable-credential-issuance/diagrams/
+    - app initiated:
+    - ![](https://i.imgur.com/KdZvKlU.png)
+    - issuer initiated:
+    - ![](https://i.imgur.com/xcnvyZV.png)
+    - feedback:
+        - privacy questions are coming up / seems less decentralized
+        - wallet backend is seeing all transactions/survaillance possible?
+        - wallet backend is in the main driver seat compared to DIDComm-related flow diagrams where the Wallet is communciating to the issuer
+        - verification part missing
+        - the two solutions are probably describing different architectures
+- Alternative Device Binding ideas without device binding attachments
+    - current solution:
+        - 1 wallet authentication credential that proves wallet authenticity and public key
+        - wallet authentication credential is presented to issuer and public key proven by device binding attachments
+        - 1 issuer credential that includes the public key as a claim
+        - verifiers only need to request issuer credential and check public key with device binding attachments
+        - pro/con:
+            - show wallet authentication credential only to the issuer
+            - device binding attachments are new/need to be implemented
+    - alternative solution
+        - 1 wallet authentication credential that proves wallet authenticity and public key as W3C cred with hardware public key as main proof mechanism
+        - 1 issuer credential that includes a reference to the wallet authentication credential (linkage by same claim)
+        - verifiers request both credentials and check linkage
+        - pro/con:
+            - more standard compliant
+            - no need for device binding attachments
+            - wallets/verifiers needs to support both W3C & Anoncreds
+            - support for both is probably on the roadmap for wallets
+            - showing the wallet authentication credential to every verifier without possiblity to use selective disclosure
+            - leaking more information
+- revocation of the wallet authentication credential
+    - alternative linkage solutions enables the certifying entity to revoke the wallet authentication credentials based on upcoming security flaws of hardware mechanisms
+    - e.g. TEE of a specific vendor/version is vulnerable
+    - certifying entity revokes wallet authetncation credential and the issuers crednetials is not usable anymore
+    - some open questions if the certifying entity is not the wallet issuer
+- next steps:
+    - describe three different wallet archtiecture: mobile/ hybrid/ cloud
+    - pitch alternative linkage solution to Aries WG
+
+## Meeting - 7 June 2022 - cancelled
+
+## Meeting - 31 May 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Usage of hardware binding in W3C/Anoncreds Credentials with examples
+2. standardization draft for communication between wallet and certifying entity
+3. Hardware-binding ideas for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI)
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Sebastzian Bickerle
+- Paul Grehan
+- Limari Navarrete
+- Christian Lungu
+- Ivan Gladushko
+- Anne Göllnitz
+- Time Bloomfield
+- Oliver Lauer
+- Kabir Maiga
+
+### Notes
+- organizational:
+    - move the main biweekly call to weekly and terminate device binding work item call
+- hardware binding in W3C/Anoncreds Credentials with examples
+    - [W3C output format](https://hackmd.io/vTNt47SMSq2UWk2CnX6XgQ?view)
+        - 2 separate credentials, wallet authentication VC and hardware-bound credential linked by the public key attribute/claim
+        - optional: use the hardware key as `credentialSubject.id`
+    - [AnonCreds output format](https://hackmd.io/BbV7BmnWQOmDu1n`-EZJWg)
+        - 2 separate credentials, wallet authentication VC and hardware-bound crednetial linked by the public key attribute/claim
+        - link secret is not secure enough as it is stored in software/not possible in hardware and not protected by issuer's signature integrity
+    - encoding of hardware public key: current examples include did:jwk
+        - however the last decision/discussion was leaning towards raw base64-encoded JWK
+        - what's the advantage of prepending "did:jwk:" ??
+- standardization draft for communication between wallet and certifying entity
+    - feedback on the sequence diagram draft
+    - ![](https://i.imgur.com/IpbGbrz.png)
+    - first sequence diagram initial setup needs a trusted setup phase between certifying entity and wallet (its issuer), e.g. Google Developer Certificates
+    - certifying entity needs to check app validation against trust registry/authenticated app registry
+    - certifying entity is the Wallet Vendor Backend Service or a Service acting on behalf of the Wallet Vendor to prevent legal issues with Google/Apple
+    - on-demand remote attestation has a slight privacy drawback as the certifying entity knows the requested timing
+- Hardware-binding ideas for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI)
+    - Paul had an interesting brainstorm with Thorsten (editor for OIDC4VC)
+    - motivations, ideas and conclusions overlap almost 100%
+    - technical information flows might be different in OIDC world to DIDComm, however OIDC folks are only starting on this topic, more to come
+    - good outlook for similarities/collaboration
+- question on Fido Authenticator for wallet security
+    - Paul had a session with Thorsten on this on IIW#34
+    - summary
+        - FIDO protocol is originally designed for 2 parties and credentials can only be presented 2 RP
+        - SSI has 3 parties and credentials shall be shared between issuer and verifier
+        - inherently working against the design goals of FIDO
+        - possible solution with Wallet as FIDO RP, however things are not trivial and workarund-ish
+        - change in core FIDO spec would be needed probably
+- next steps:
+    - provide 2 options how to link W3C Verifiable Credentials with hardware-bound credential
+    - change examples from did:jwk to raw JWK
+    - continue ideas with implementation of certifying entity
+    - Aries RFC for Device Binding Attachments implementations needed
+
+
+## Meeting - 24 May 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Usage of hardware binding in W3C/Anoncreds Credentials with examples
+2. updates on [Challenge-response Aries RFC Draft](https://github.com/hyperledger/aries-rfcs/pull/729)
+3. standardisation draft for communication between wallet and certifying entity
+4. Encoding of hardware public key
+
+### Attendees
+
+- Paul Bastian
+- Markus Kreusch
+- Ian Bailey
+- Oliver Lauer
+
+### Notes
+
+- short and small meeting today
+- presented ideas about implementation of certifying entity
+- ![](https://i.imgur.com/IpbGbrz.png)
+
+
+
+## Meeting - 17 May 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Usage of hardware binding in W3C Credentials (draft presented by Jolocom)
+2. updates on [Challenge-response Aries RFC Draft](https://github.com/hyperledger/aries-rfcs/pull/729)
+3. Encoding of hardware public key (JWK vs did:jwk)
+4. Trusted Verifier concepts in lissi wallet
+5. standardisation ideas for communication between wallet and certifying entity
+6. Hardware-binding ideas for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI)
+
+### Attendees
+
+- Paul Bastian
+- Christian
+- Ian Bailey
+- Anne Göllnitz
+- Ivan Gladushko
+- Sebastian Bickerle
+- Tim Bloomfield
+- Leonardo Sprezano
+
+### Notes
+
+- organization
+    - moving back to regular weekly call
+    - poll for moving the call timing coming up soon, conflict with W3C CCG (suggested by Kaliya)
+- Christians draft on W3C credentials:
+    - Wallet Authentication VC: https://hackmd.io/vTNt47SMSq2UWk2CnX6XgQ?view
+    - how does the issuer link the hardware-bound key to his credential?
+    - in Anoncreds: include the public key as an attribute in the issuer's credential
+        - standardized attribute name for hardware public key would make implementation and discovery by verifiers easy
+        - does the same approach work for W3C credentials or is there a better approach?
+    - whats the bestapproach to link it to the issuer's crednetial in W3C?
+- Aries RFC for Device Binding Attachments
+    - updated Signing Mechanism to adapt `jws` on RFC0017 in the attachments layer
+    - specification seems ready for merge to main Aries repo
+    -  move to test implementations next
+- public key encoding
+    - JWK favored
+    - did:jwk does not add benefits(?)
+    - Anoncreds as base64-encoded JWK
+    - W3C as JWK (?)
+- Trusted Verifier concepts in lissi wallet (presented by Sebastian Bickerle)
+    - https://lissi-id.medium.com/trust-in-the-digital-space-7762471351cf
+    - concept for trust towards the issuer/verifier enforced by the wallet
+    - use X509 EV certificates of endpoints to display trusted entity information
+    - available in Lissi Beta
+    - one building block against phishing (not covering all)
+    - concepts should also include trust from trust frameworks/maschine-readable governance (complementary)
+    - whitelist approaches increase security and contradict SSI "freedom"
+    - multiple levels of credentials requiring the wallet to ensure/enforce diffrent levels of Verifier authenticity (e.g. for regulated use cases)
+    - Wallet Security topic for the future
+- standardisation ideas for communication between wallet and certifying entity
+    - optional
+    - reference implementation
+    - wait for the first implementations to get ideas/feedback/experience
+- Hardware-binding ideas for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI)
+    - [new paper](https://openid.net/wordpress-content/uploads/2022/05/OIDF-Whitepaper_OpenID-for-Verifiable-Credentials_FINAL_2022-05-12.pdf)
+    - looking into possiblities to integrate device binding into OIDC4CI & OIDC4VP in the future
+- next steps:
+    - get a similar example Wallet Authentication VC for Anoncreds
+    - integrate decision on key encoding into examples
+    - merge Aries RFC0728 to Aries-RFC
+    - start on implementations with Device binding attachments and certifying entity
+
+
+## Meeting - 10 May 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. standardisation ideas for communication between wallet and certifying entity
+2. Usage of hardware binding in W3C Credentials
+3. updates on [Challenge-response Aries RFC Draft](https://github.com/hyperledger/aries-rfcs/pull/729)
+4. Encoding of hardware public key (JWK vs did:jwk)
+
+### Attendees
+
+- Sebastian Bickerle
+- Markus Kreusch
+- Leon Schoeneich
+- Bernard Joly
+
+### Notes
+
+- standardisation ideas for communication between wallet and certifying entity
+    - Wait for proof concept and initial implementation
+    - Android, iOS are currently our main focus
+- Usage of hardware binding in W3C credentials
+    - waiting for input W3C experts
+- Updates on challenge-response RFC draft
+    - privacy considerations have to be highlighted
+- Encoding of hardware public key
+    - If we have no good reason for did:jwk we should use JWK+base64-encoding
+
+
 ## Meeting - 03 May 2022 - (6 PM CET, 1pm EST, 10am PST)
 
 ### Agenda
