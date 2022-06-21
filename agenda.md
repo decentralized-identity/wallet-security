@@ -19,6 +19,75 @@ Please note that we might not notice a pullrequest in time, but you are free to 
 Password: 661333
 </details>
 
+## Meeting - 21 June 2022 - (6 PM CET, 1pm EST, 10am PST)
+
+### Agenda
+
+1. Hardware-binding flow drafts for OpenID Connect for Verifiable Credentials Issuance (OIDC4CI) - new drafts, ongoing discussion and verification flows
+2. discussion on alternative to link wallet authentication credential
+3. Starting comparison on Wallet Security Architectures
+
+### Attendees
+
+- Paul Bastian
+- Ian Bailey
+- Sebastian Bickerle
+- Tom Jones
+
+### Notes
+- organizational stuff
+    - waiting one more week for the group meeting poll, please participate
+        - https://doodle.com/meeting/participate/id/bWn8N0Wa/vote
+    - Paul is on holidays next week, pausing for one session
+- updates on OIDC4VC flows from Torsten
+    - app initiated:![](https://i.imgur.com/1VCI6RQ.png)
+    - issuer initiated: ![](https://i.imgur.com/Xaxz36x.png)
+    - feedback:
+        - privacy is increased, the wallet backend does not see which credential type is requested and the data of the crednetial, less communciation between wallet backend and issuer
+        - however it still learns metadata which issuers are contacted by the wallet frontend
+        - propose to route app attestation token back to wallet frontend and then to the issuer
+- https://bitbucket.org/openid/connect/src/master/openid-4-verifiable-presentations/diagrams/
+    - ![](https://i.imgur.com/NNQdvSN.png)
+        - verification flows are matching to DIDComm flows
+    - verifiers could require app attestation for certain usecases
+        - not only issuers might require app attestation
+        - more flexiblity if wallet authentication is encapsulated as verifiable credential
+- comparison on hardware binding linkage mechanism
+
+| Solutions | Device Binding Attachments | Credential Linkage |
+| -------- | -------- | -------- |
+| Remote Attestation | 1 wallet authentication credential that proves wallet authenticity and hardware key as claim/attribute received from Certifying Entity/Wallet Backend | 1 wallet authentication credential that proves wallet authenticity and public key as W3C cred with hardware public key as main proof mechanism received from Certifying Entity/Wallet Backend |
+| Credential Format Attestation | any (Anoncred/W3C)| W3C |
+| Issuance | wallet authentication credential is presented to issuer and  issuer includes hardware public key claim/attribute into his credential | wallet authentication credential is presented to issuer and issuer includes linkage claim/attribute into his credential |
+| Hardware Proof mechanism | Device Binding Attchments | Presentation as W3C (Present Proof/Presentation Exchange) and linkage by claim/attribute |
+| Verification | request proof of issuer's credential and Device Binding Attachments | request proof of issuer's credential and Wallet Authentication Credential (proofing the hardware key) and check linkage by claim/attribute|
+| Pro | show wallet authentication credential only to the issuer | more standard compliant |
+| Contra | device binding attachments are new/need to be implemented | wallets/verifiers needs to support both W3C & Anoncreds, but support for both is probably on the roadmap for wallets anyway; showing the wallet authentication credential to every verifier without possiblity to use selective disclosure |
+
+- more feedback needed
+
+| Architecture | mobile | hybrid | cloud |
+| -------- | -------- | -------- | ------- |
+| Credential Storage location/mechanism | encrypted app storage | tbc | encrypted cloud storage |
+| Key Storage location/mechanism | encrypted app storage, TEE, SecureEnclave, SecureElement| tbc | Cloud-HSM |
+| Holder authentication | app/phone | tbc | username/password, webAuthN? |
+| Backup and Recovery | | | |
+| Revocation | | | |
+| Offline support | | | |
+| alternative transport protocols (NFC, BLE) | | | |
+| Authentication of Verifier | | | |
+| Privacy implications | | | |
+| Multi-Device capabilities | | | |
+
+
+- starting discussion on architectures (independent on device binding/wallet authentication discussion)
+    - goal is to find better terminology/definition that helps the discussion and evaulation of architecture properties
+    - hybrid solutions can very widely, probably multiple solutions
+- next steps: 
+    - pitch alternative linkage solution to Aries WG
+    - continuing wallet security architecture and wallet authentication credential linkaged discussion in 2 weeks
+
+
 ## Meeting - 14 June 2022 - (6 PM CET, 1pm EST, 10am PST)
 
 ### Agenda
